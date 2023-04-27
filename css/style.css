@@ -1,0 +1,244 @@
+/* CSS for Web & Javascript Project - 393px - 449px browser width starting range */
+
+
+/* General Styles */
+
+:root {
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  background: url("../images/internet.jpeg") no-repeat center fixed;
+  background-size: cover;
+}
+
+body {
+  height: 225vh;
+  margin: 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+}
+
+h1 {
+  margin: .5em 0 0;
+  padding: 0 1em;
+}
+
+
+/* Grid Layout - some CSS Grid with integrated Flex containers - Using a mainly Mobile First approach. Screen width starting range: 393px - 449px. Refer to "responsive.css" for other widths */
+
+#container { /* Grid Container */
+  display: grid;
+  grid-template-areas: 'headerarea'
+                       'uppermainarea'
+                       'lowermainarea'
+                       'footerarea';
+  grid-template-rows: 16% 62% 18% 4%; 
+  grid-template-columns: 100%;
+
+  width: 100%;
+  height: 100%;
+}
+
+header, #uppermain, #lowermain, footer { /* Grid Items */
+  border: .5px dotted white;
+} 
+
+header { /* Grid Item 1 */
+  grid-area: headerarea;
+  background: linear-gradient(to top, rgba(49, 96, 237, 0.4), rgba(49, 96, 237, 0));
+}
+
+
+/* elements within header mainly found in nav.css */
+
+
+#uppermain { /* Grid Item 2 */
+  grid-area: uppermainarea;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  overflow: auto;
+  background-color: rgba(49, 96, 237, 0.5);
+}
+
+#lowermain { /* Grid Item 3 */
+  grid-area: lowermainarea;
+  background: linear-gradient(to bottom, rgba(49, 96, 237, 0.5), rgba(49, 96, 237, 0));
+}
+
+footer { /* Grid Item 4 */
+  grid-area: footerarea;
+}
+
+
+/* Flex Layout with items */
+
+#flex-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5em;
+  margin: .5em 1em;
+}
+
+.gallery-items { /* The gallery images */
+  width: 10em;
+  height: 8em;
+  transition: all 1s;
+}
+
+.gallery-items:hover {
+  transform: scale(1.3);
+}
+
+#flex-summary {
+  margin: 1em 0 .5em;
+  padding: 0 1em;
+  border-radius: 10px;
+  font-size: .97rem;
+  font-weight: bold;
+  background-color: rgba(216, 213, 219, 0.5);
+  color: rgb(0, 0, 0);
+}
+
+#flex-quest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#activate { /* The button to be clicked by the user to activate the quiz */
+  width: 6.5em;
+  height: 4.25em;
+  margin: .5em auto 0;
+  border: .5px groove rgb(255, 255, 255);
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 28, 85);
+  box-shadow: -3px -2px 2px 2px rgb(0, 28, 85);
+  transition: box-shadow, color, .25s;
+}
+
+#activate:hover { /* Highlighting the button */ 
+  box-shadow: -2px -1px 1px 1px rgb(228, 220, 220); 
+  color: rgb(107, 214, 107);
+}
+
+#activate:active { /* For when the button is being clicked */
+  transition: none;
+  transform: translate(-1px, -2px);
+  box-shadow: -2px -1px 1px 1px rgb(3, 22, 61);
+}
+
+#q-output { /* Div ready to print output for all answers at end of quiz */
+  width: 0%;
+}
+
+#q-output p { /* Ready for paragraphs to be output showing correct answers at end of quiz */
+  color: rgb(117, 247, 134);
+  margin: 1rem auto;  
+}
+
+#q-output span { /* Ready for spans to be output showing wrong answers */
+  display: inline-block;
+  margin: .5rem auto;
+  color: rgb(255, 245, 112);  
+}
+
+#laptop { /* The containing Div for the Laptop diagram */
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+#screen { /* The screen component of the laptop diagram */
+  width: 67%;
+  height: 65%;
+  margin: .2em 0 0 7.2em;
+  padding: .9em .4em .2em;
+  background-color: rgb(238, 230, 230);
+  border-radius: 15px 15px 5px 5px;
+}
+
+#interface { /* The interface component where the overall score and closing message are output at end of quiz */
+  width: 95%;
+  height: 95%;
+  border: 1px groove rgb(0, 28, 85); 
+  border-radius: 10px;
+  margin: auto;
+  padding: .5rem;
+  font-size: .95rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(238, 230, 230);
+}
+
+#interface span { /* Ready for the span which is output for the end of quiz closing message */
+  display: inline-block;
+  margin: .5rem;
+}
+
+#outerkb { /* The outer keyboard component */
+  width: 67%;
+  height: 30%;
+  margin: .15em 0 0 4.5em;
+  padding: .7em .15em 0;
+  border-radius: 5px 5px 10px 25px;
+  background-color: rgb(238, 230, 230);
+  transform: skewX(315deg);
+}
+
+#innerkb { /* The inner keyboard component */
+  width: 92%;
+  height: 60%;
+  border: 1px groove rgb(0, 28, 85); 
+  border-radius: 5px 5px 10px 10px;
+  margin: auto;
+  background-color: rgb(238, 230, 230);
+}
+
+#mousepad { /* The mousepad component */
+  width: 34%;
+  height: 27%;
+  border: 1px groove rgb(0, 28, 85); 
+  border-radius: 5px 5px 10px 10px;
+  margin: .5em auto;
+  background-color: rgb(238, 230, 230);
+}
+
+#edge { /* The bottom of the laptop */
+  width: 62.8%;
+  height: 2.5%;
+  margin: .1em 0 0 2.9em;
+  border-radius: 0 0 40px 20px;
+  background-color: rgb(238, 230, 230);
+}
+
+#copy {
+  display: inline-block;
+  margin: 1.3em auto;
+}
+
+
+
+
+
+
+
+
+

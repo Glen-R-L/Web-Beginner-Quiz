@@ -1,0 +1,51 @@
+/* 393px - 449px browser width starting range */
+
+
+/* CSS for the Navbar */
+
+.flex-nav {
+  display: flex;
+  justify-content: space-around;
+  height: 58%;
+}
+
+#flex-link-list { /* The external links along the top of page */
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1em 0 0;
+  padding-left: .5em;
+}
+
+#flex-link-list li {
+  height: 5em;
+  padding: .3em .5em 1.2em;
+  border-radius: 10px;
+}
+
+#flex-link-list li:hover {
+  border: .5px groove rgb(255, 255, 255);
+  background-color: rgb(49, 96, 237);
+}
+
+#flex-social-list { /* The social icon links at the top-right of page */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 10%;
+  margin: .75em 1.5em 0 1em;
+}
+
+#flex-social-list li {
+  margin: 0;
+}
+
+#flex-social-list li:hover {
+  transform: scale(1.5);
+}
+
+.social-icons {
+  width: 2em;
+  margin: .25em;
+}

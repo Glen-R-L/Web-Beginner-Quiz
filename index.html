@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Single page application for a beginner quiz on the World Wide Web">
+
+    <title>World Wide Web Quiz For Beginners</title>
+
+    <link rel="icon" href="images/favicons/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="javascript/script.js"></script>
+  </head>
+  <body>
+    <div id="container"> <!-- Grid Container -->
+      <header> <!-- Grid Item 1 -->
+        <nav class="flex-nav">
+          <ul id="flex-link-list"> <!-- External nav links -->
+            <li><a href="https://www.w3.org/" target="_blank">W3C</a></li>
+            <li><a href="https://webfoundation.org/" target="_blank">Web Foundation</a></li>
+            <li><a href="https://businessdegrees.uab.edu/blog/internet-vs-world-wide-web-whats-the-difference/" target="_blank">Web & Internet: What's The Difference?</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Docs: For Developers</a></li>
+          </ul>
+          <ul id="flex-social-list"> <!-- Social nav links -->
+            <li>
+              <a href="#"><img class="social-icons" src="images/twitter_icon.png" alt="share on Twitter"></a>
+            </li>
+            <li>
+              <a href="#"><img class="social-icons" src="images/facebook_icon.png" alt="share on Facebook"></a>
+            </li>
+            <li>
+              <a href="#"><img class="social-icons" src="images/instagram_icon.png" alt="share on Instagram"></a>
+            </li> 
+          </ul>
+        </nav>
+        <h1>World Wide Web Quiz For Beginners</h1>
+      </header> <!-- End of Grid Item 1 -->
+      <section id="uppermain"> <!-- Grid Item 2 -->
+        <div id="flex-gallery"> <!-- Gallery images -->
+          <img class="gallery-items" src="images/berners_lee.jpeg" alt="">
+          <img class="gallery-items" src="images/netscape_navigator.png" alt="">
+          <img class="gallery-items" src="images/napster.png" alt="">
+          <img class="gallery-items" src="images/wordpress.png" alt="">
+          <img class="gallery-items" src="images/facebook.jpeg" alt="">
+          <img class="gallery-items" src="images/iphone.jpeg" alt="">
+          <img class="gallery-items" src="images/chrome.jpeg" alt="">
+          <img class="gallery-items" src="images/ipad.jpeg" alt="">
+          <img class="gallery-items" src="images/apple watch.jpeg" alt="">
+          <img class="gallery-items" src="images/blockchain.jpeg" alt="">
+        </div>
+        <div id="flex-summary">
+          <h2>Take Part In The Quiz</h2>
+          <p>Welcome to this World Wide Web Quiz for beginners. Each of the images above relates to a question in the quiz. Just click on the button below to start. Your results and feedback will be printed below at the end.</p>
+        </div>
+        <div id="flex-quest">
+          <button id="activate">Start</button> <!-- The button to be clicked by the user to activate the quiz -->
+          <div id="q-output"></div> <!-- Div ready to print output for all answers at end of quiz -->
+        </div>
+      </section> <!-- End of Grid Item 2 -->
+      <section id="lowermain"> <!-- Grid Item 3 -->
+        <div id="laptop"> <!-- The containing Div for the Laptop diagram -->
+          <div id="screen"> <!-- The screen component of the laptop diagram -->
+            <div id="interface"></div> <!-- The interface component where the overall score and closing message are output at end of quiz -->
+          </div>
+          <div id="outerkb"> <!-- The outer keyboard component -->
+            <div id="innerkb"></div> <!-- The inner keyboard component -->
+            <div id="mousepad"></div> <!-- The mousepad component -->
+          </div>
+          <div id="edge"></div> <!-- The bottom of the laptop -->
+        </div>
+      </section> <!-- End of Grid Item 3 -->
+      <footer> <!-- Grid Item 4 -->
+        <span id="copy">© Glen R Levett, 2023</span>
+      </footer> <!-- End of Grid Item 4 -->
+    </div> <!-- End of Grid Container -->
+    <script>
+
+      // Event Binder with Event Listener for the quiz to run upon clicking of the button 
+      document.getElementById("activate").addEventListener("click", takeQuiz.bind(null, document.getElementById("q-output"), document.getElementById("activate"), document.getElementById("interface"), document.body, document.getElementById("container"), document.getElementById("screen"), document.getElementById("outerkb"), document.getElementById("edge")));
+
+    </script>
+  </body>
+</html>
+
